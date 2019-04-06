@@ -1,0 +1,13 @@
+One Agent
+
+A tiny utility to ensure there is always an ssh agent available in a
+known but secure location containing your unencrypted private keys.
+
+Simply install it to ~/.profile with "make install" and a new shell
+function 'agent' is available which ensures that an ssh-agent exists
+and has all unencrypted identies added to it with a socket in ~/.ssh.
+
+Arguments to agent are additional keys to add; they won't be decrypted.
+
+agent -k will also kill all other ssh-agent processes that it can and
+remove stale socks from /tmp.
